@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,6 +14,11 @@
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,20 +50,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\binaries\NServiceBus.Core.dll</HintPath>
     </Reference>
-
     <Reference Include="NServiceBus.Host, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\binaries\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
-      
     </Reference>
     <Reference Include="System.Xml.Linq">
-      
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
-      
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
