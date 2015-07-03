@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85E813C0-4A94-4946-8B1F-DE1E39AA7D11}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NServiceBus.Host</RootNamespace>
+    <AssemblyName>NServiceBus.Host</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NServiceBus.Host.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NServiceBus.Host.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\external-bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Magnum, Version=0.1.0.300, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\external-bin\Topshelf\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\external-bin\ServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\output\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\external-bin\Topshelf\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="As.cs" />
+    <Compile Include="IConfigureLogging.cs" />
+    <Compile Include="IConfigureThisEndpoint.cs" />
+    <Compile Include="IHandleProfile.cs" />
+    <Compile Include="Internal\Arguments\HostArguments.cs" />
+    <Compile Include="Internal\AssemblyScanner.cs" />
+    <Compile Include="Internal\ConfigurationManager.cs" />
+    <Compile Include="Internal\GenericHost.cs" />
+    <Compile Include="Internal\InMemorySagaPersister.cs" />
+    <Compile Include="Internal\InMemorySubscriptionStorage.cs" />
+    <Compile Include="Internal\Logging\IntegrationLoggingHandler.cs" />
+    <Compile Include="Internal\Logging\LiteLoggingHandler.cs" />
+    <Compile Include="Internal\Logging\ProductionLoggingHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\InstallDtcProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\InstallMsmqProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\InstallPerformanceCountersProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\IntegrationProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\LiteProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\PerformanceCountersProfileHandler.cs" />
+    <Compile Include="Internal\ProfileHandlers\ProductionProfileHandler.cs" />
+    <Compile Include="Internal\ProfileManager.cs" />
+    <Compile Include="Internal\RoleManager.cs" />
+    <Compile Include="Internal\WcfManager.cs" />
+    <Compile Include="Internal\WcfServiceHost.cs" />
+    <Compile Include="IProfile.cs" />
+    <Compile Include="ISpecify.cs" />
+    <Compile Include="IWant.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Profiles\InstallDtc.cs" />
+    <Compile Include="Profiles\InstallMsmq.cs" />
+    <Compile Include="Profiles\InstallPerformanceCounters.cs" />
+    <Compile Include="Profiles\Integration.cs" />
+    <Compile Include="Profiles\Lite.cs" />
+    <Compile Include="Profiles\PerformanceCounters.cs" />
+    <Compile Include="Profiles\Production.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Internal\HostServiceLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Help.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <notused>xcopy /Y "$(ProjectDir)$(OutDir)*.*" "$(ProjectDir)..\..\..\build\host\"</notused>
+  </PropertyGroup>
+</Project>
